@@ -24,4 +24,4 @@ jobs:
         context: server
         file: server/Dockerfile
         push: true
-        tags: ghcr.io/${{ github.actor }}/${{ github.repository }}:latest
+        tags: ghcr.io/${{ github.repository }}:latest
