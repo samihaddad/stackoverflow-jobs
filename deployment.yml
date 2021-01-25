@@ -19,3 +19,5 @@ spec:
         image: ghcr.io/samihaddad/stackoverflow-jobs:latest
         ports:
         - containerPort: 4000
+      imagePullSecrets:
+      - name: regcred
