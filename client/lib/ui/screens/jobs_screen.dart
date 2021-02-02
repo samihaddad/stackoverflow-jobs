@@ -3,18 +3,17 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:so_jobs/core/blocs/job_bloc.dart';
 import 'package:so_jobs/core/constants/api.dart';
-import 'package:so_jobs/core/gql/queries.dart' as queries;
 import 'package:so_jobs/core/models/job.dart';
 import 'package:so_jobs/core/services/job_service.dart';
 import 'package:so_jobs/ui/screens/job_details_screen.dart';
 import 'package:so_jobs/ui/widgets/job_list_tile.dart';
 
-class JobsScreen2 extends StatefulWidget {
+class JobsScreen extends StatefulWidget {
   @override
-  _JobsScreen2State createState() => _JobsScreen2State();
+  _JobsScreenState createState() => _JobsScreenState();
 }
 
-class _JobsScreen2State extends State<JobsScreen2> {
+class _JobsScreenState extends State<JobsScreen> {
   JobBloc _bloc;
   final _pagingController = PagingController<String, Job>(firstPageKey: null);
 
@@ -57,7 +56,7 @@ class _JobsScreen2State extends State<JobsScreen2> {
       appBar: AppBar(
         title: Text('Jobs'),
         actions: [
-          
+
         ],
       ),
       body: RefreshIndicator(
