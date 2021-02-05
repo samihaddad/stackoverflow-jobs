@@ -1,9 +1,9 @@
 const { paginateResults } = require('./utils');
-let allJobs;
+
 module.exports = {
   Query: {
     jobFeed: async (_, { pageSize = 20, after }, { dataSources }) => {
-      if (!allJobs) allJobs = await dataSources.jobAPI.getJobs();
+      const allJobs = await dataSources.jobAPI.getJobs();
       allJobs.sort((a, b) => b.publishDate - a.publishDate);
       const jobs = paginateResults({
         after,
